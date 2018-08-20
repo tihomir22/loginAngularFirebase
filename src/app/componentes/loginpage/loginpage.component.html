@@ -4,14 +4,14 @@
       <div class="card">
         <div class="card-body">
           <h1>Login</h1>
-          <form action="" method="POST">
+          <form  (submit)="onSubmitLogin()">
               <label for="email">Email</label>
-              <input type="email" name="email" class="form-control">
+              <input type="email" name="email" class="form-control" [(ngModel)]="email">
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" name="password" class="form-control">
+              <input type="password" name="password" class="form-control" [(ngModel)]="pass">
             </div>
-            <input type="text" value="Logearse" class="btn btn-primary btn-block btn-lg">
+            <input type="submit" value="Logearse" class="btn btn-primary btn-block btn-lg">
           </form>
         </div>
       </div>
