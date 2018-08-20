@@ -9,6 +9,12 @@ import { RegisterpageComponent } from './componentes/registerpage/registerpage.c
 import { LoginpageComponent } from './componentes/loginpage/loginpage.component';
 import { PrivadoComponent } from './componentes/privado/privado.component';
 import { NotfoundpageComponent } from './componentes/notfoundpage/notfoundpage.component';
+import {AuthService} from './services/auth.service';
+import {FormsModule} from '@angular/forms';
+
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuth, AngularFireAuthModule} from 'angularfire2/auth';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,9 +28,12 @@ import { NotfoundpageComponent } from './componentes/notfoundpage/notfoundpage.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
